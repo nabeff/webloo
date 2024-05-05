@@ -1,212 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Four Colored Boxes</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
-
 <body>
+    
+    <div class="container">
+        <div id="box1" class="box active">Box 1<h1>hello</h1></div>
+        <div id="box2" class="box">Box 2<h1>hello</h1></div>
+        <div id="box3" class="box">Box 3<h1>hello</h1></div>
+        <div id="box4" class="box">Box 4<h1>hello</h1></div>
+    </div>
 
+    <script>
+  
+        const box1 = document.getElementById('box1');
+        box1.addEventListener('click', function() {
+           
+            event.preventDefault();
+        });
 
-    <header>
-        <div id="overlay" style="display: none;"></div>
-        <div id="navbar" class="navBar flex space-between align-center">
-            <div class="flex">
-                <h1 class="titleWebloo">Webloo</h1>
-            </div>
-            <div class="flex align-center">
-                <h3 id="menuButton" class="mr">Menu</h3>
-                <img class="circle-header" src="./images/dry.png" alt="">
-            </div>
-            <div class="flex"><button class="buttonBlack">Free Consultation</button></div>
-        </div>
-        <div class="header-container" id="headerContainer" style="display: none;">
-            <div class="close-container">
-                <img src="./images/close.png" alt="Close" id="closeImage">
-            </div>
-            <div class="headerContainer-links">
-                <div class="headerLinks">
-                    <nav class="header-links">
-                        <li id="homeLink">Home</li>
-                        <li>About</li>
-                        <li>Services</li>
-                        <li>Portfolio</li>
-                    </nav>
-                </div>
-                <div class="info">
-                    <h4 class="email-header"><a class="beInTouch">Get in touch</a></h4>
-                    <h4 class="email-header">hello@Webloo.co <img src="./images/Vector.png" alt=""></h4>
-                </div>
-            </div>
-            <ul class="social-links">
-                <li>Instagram</li>
-                <li>LinkedIn</li>
-                <li>Clutch</li>
-                <li>Behance</li>
-                <li>Dribbble</li>
-                <li>X</li>
-            </ul>
-        </div>
-    </header>
+        document.querySelectorAll('.box').forEach((box, index) => {
+            box.addEventListener('click', function() {
+                const activeBox = document.querySelector('.active');
+                
+                if (this !== activeBox) {
+                    const activeBoxRect = activeBox.getBoundingClientRect();
+                    const clickedBoxRect = this.getBoundingClientRect();
+                    const deltaX = clickedBoxRect.left - activeBoxRect.left;
+                    const deltaY = clickedBoxRect.top - activeBoxRect.top;
 
-    <section id="home" class="home">
-        <div class="home-content">
-            <h1 class="home-title">Innovative Design and Development Agency.</h1>
-            <p>We collaborate with startups and established firms worldwide to create impactful brand identities.</p>
-        </div>
-        <div class="home-image">
-            <img src="./images/hourglass.png" alt="">
-        </div>
-    </section>
+                    activeBox.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                    activeBox.style.zIndex = 1; 
+                    activeBox.classList.remove('active');
+                    this.classList.add('active');
+                    this.style.zIndex = 40; 
 
+                    
+                    const nonActiveBoxes = document.querySelectorAll('.box:not(.active) h1');
+                    nonActiveBoxes.forEach(box => {
+                        box.style.display = 'none';
+                    });
 
+                   
+                    const activeBoxContent = this.querySelector('h1');
+                    activeBoxContent.style.display = 'block';
 
-    <section class="container-services">
-        <div class="backcircle-position">
-            <div class="backcircle"></div>
-            <div class="backcircle2"></div>
-            <div class="backcircle3"></div>
-        </div>
-
-
-
-        <div id="card1" class="services">
-            <div class="service-header">
-                <div class="title">
-                    <h1>Brand Strategy</h1>
-                </div>
-                <div class="container">
-                    <div class="circle one">
-                        <img src="./images/logo.jpg" alt="">
-                    </div>
-                    <div class="circle two">
-                        <p>01</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-content">
-                <p>We collaborate with startups and </br> established firms worldwide to create </br>impactful brand
-                    identities.</p>
-                <div class="categories">
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                </div>
-            </div>
-
-            <div class="arrow-bottom-right">
-                <p>Learn More</p><img src="./arrow.png" alt="Arrow">
-            </div>
-        </div>
-
-
-        <div id="card2" class="services">
-            <div class="service-header">
-                <div class="title">
-                    <h1>Immersive Design</h1>
-                </div>
-                <div class="container">
-                    <div class="circle one">
-                        <img src="./images/card4.jpg" alt="">
-                    </div>
-                    <div class="circle two">
-                        <p>02</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-content">
-                <p>We collaborate with startups and </br> established firms worldwide to create </br>impactful brand
-                    identities.</p>
-                <div class="categories">
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                </div>
-            </div>
-
-            <div class="arrow-bottom-right">
-                <p>Learn More</p><img src="./arrow.png" alt="Arrow">
-            </div>
-        </div>
-
-
-        <div id="card3" class="services">
-            <div class="service-header">
-                <div class="title">
-                    <h1>Creative Tech</h1>
-                </div>
-                <div class="container">
-                    <div class="circle one">
-                        <img src="./images/card2.jpg" alt="">
-                    </div>
-                    <div class="circle two">
-                        <p>03</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-content">
-                <p>We collaborate with startups and </br> established firms worldwide to create </br>impactful brand
-                    identities.</p>
-                <div class="categories">
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                    <span class="category">Art Direction</span>
-                </div>
-            </div>
-
-            <div class="arrow-bottom-right">
-                <p>Learn More</p><img src="./arrow.png" alt="Arrow">
-            </div>
-        </div>
-
-
-        <div id="card4" class="services">
-            <div class="service-header">
-                <div class="title">
-                    <h1>Performance Media</h1>
-                </div>
-                <div class="container">
-                    <div class="circle one">
-                        <img src="./images/card3.jpg" alt="">
-                    </div>
-                    <div class="circle two">
-                        <p>04</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-content">
-                <p>We collaborate with startups and </br> established firms worldwide to create </br>impactful brand
-                    identities.</p>
-                <div class="categories">
-                    <span class="category">Art Direction</span>
-                    <span class="category">Brand Guideline</span>
-                    <span class="category">Voice & Tone</span>
-                    <span class="category">Brand Positioning</span>
-                    <span class="category">Content strategy</span>
-                </div>
-            </div>
-
-            <div class="arrow-bottom-right">
-                <p>Learn More</p><img src="./arrow.png" alt="Arrow">
-            </div>
-        </div>
-
-        <div>
-            <h1 class="service-title">SERVICES</h1>
-        </div>
- 
-    </section>
-
-    <script src="./index.js">
-            
+                    setTimeout(() => {
+                        activeBox.style.transform = 'translate(0, 0)';
+                    }, 300); 
+                }
+            });
+        });
     </script>
 </body>
-
 </html>

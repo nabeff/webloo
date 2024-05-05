@@ -54,3 +54,7 @@ window.addEventListener('click', function (event) {
         }, 500);
     }
 });
+
+
+// Path: index.html
+
