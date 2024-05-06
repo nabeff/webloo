@@ -1,30 +1,52 @@
 .container {
     display: flex;
- 
-    align-items: center;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 .box {
-    width: 200px;
-    height: 100px;
+    color: black;
+    width: 20%; /* Default width for non-active boxes */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    flex-direction: column;
     font-size: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 2rem;
+    transition: all 0.4s ease; /* Transition for smooth resizing and repositioning */
     position: relative;
+    z-index: 0;
+    border: 1px solid black;
+    overflow: hidden;
+    height: 600px; /* Fixed height for all boxes */
 }
 
 .active {
-    width: 300px;
-    height: 100px;
-    z-index: 1; 
+    z-index: 40; /* Ensure active box is always on top */
+    width: 40%; /* Expanded width for the active box */
 }
 
-#box1 { background-color: #ff6347; }
-#box2 { background-color: #4682b4; }
-#box3 { background-color: #32cd32; }
-#box4 { background-color: #ffa500; }
+/* Specific background colors and image for active */
+#box1.active {
+    background: url("story1.jpg") no-repeat center center;
+    background-size: cover; /* This will cover the entire area of the div */
+}
+#box2.active {
+      background: url("story2.jpg") no-repeat center center;
+    background-size: cover;
+}
+#box3.active {
+    background-color: #32cd32;
+}
+#box4.active {
+    background-color: #ffa500;
+}
+
+/* Hide all content by default, show only title */
+.content {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.box.active .content {
+    opacity: 1; /* Fade in effect when active */
+}

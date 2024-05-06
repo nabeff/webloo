@@ -9,52 +9,106 @@
 <body>
     
     <div class="container">
-        <div id="box1" class="box active">Box 1<h1>hello</h1></div>
-        <div id="box2" class="box">Box 2<h1>hello</h1></div>
-        <div id="box3" class="box">Box 3<h1>hello</h1></div>
-        <div id="box4" class="box">Box 4<h1>hello</h1></div>
+
+        <div id="box1" class="box active">
+            <div class="title">
+                <h2>Story</h2>
+            </div>
+            <div class="content">
+                <h1>Delving into Our Vision and Journey</h1>
+                <p>At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact. Join us on our journey as we embark on new ventures, disrupt industries, and shape the future of innovation.</p>
+                <button>Get in Touch</button>
+            </div>
+        </div>
+
+        <div id="box2" class="box">
+            <div class="title">
+                <h2>Vision</h2>
+            </div>
+            <div class="content">
+                <h1>Delving into Our Vision and Journey</h1>
+                <p>At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact. Join us on our journey as we embark on new ventures, disrupt industries, and shape the future of innovation.</p>
+                <button>Get in Touch</button>
+            </div>
+        </div>
+
+        <div id="box3" class="box">
+            <div class="title">
+                <h2>Values</h2>
+            </div>
+            <div class="content">
+                <h1>Delving into Our Vision and Journey</h1>
+                <p>At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact. Join us on our journey as we embark on new ventures, disrupt industries, and shape the future of innovation.</p>
+                <button>Get in Touch</button>
+            </div>
+        </div>
+
+        <div id="box4" class="box">
+            <div class="title">
+                <h2>Culture</h2>
+            </div>
+            <div class="content">
+                <h1>Delving into Our Vision and Journey</h1>
+                <p>At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact. Join us on our journey as we embark on new ventures, disrupt industries, and shape the future of innovation.</p>
+                <button>Get in Touch</button>
+            </div>
+        </div>
+
     </div>
 
     <script>
-  
-        const box1 = document.getElementById('box1');
-        box1.addEventListener('click', function() {
-           
-            event.preventDefault();
-        });
 
-        document.querySelectorAll('.box').forEach((box, index) => {
-            box.addEventListener('click', function() {
-                const activeBox = document.querySelector('.active');
-                
-                if (this !== activeBox) {
-                    const activeBoxRect = activeBox.getBoundingClientRect();
-                    const clickedBoxRect = this.getBoundingClientRect();
-                    const deltaX = clickedBoxRect.left - activeBoxRect.left;
-                    const deltaY = clickedBoxRect.top - activeBoxRect.top;
+document.querySelectorAll('.box').forEach(box => {
+    box.addEventListener('click', function() {
+        const activeBox = document.querySelector('.active');
+        if (this !== activeBox) {
+            // Calculate the transition distances
+            const clickedBoxRect = this.getBoundingClientRect();
+            const deltaX = clickedBoxRect.left - activeBox.offsetLeft; // use offsetLeft for direct parent positioning comparison
 
-                    activeBox.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-                    activeBox.style.zIndex = 1; 
-                    activeBox.classList.remove('active');
-                    this.classList.add('active');
-                    this.style.zIndex = 40; 
+            // Prepare the new active box by setting its content to visible but transparent
+            const newActiveContent = this.querySelector('.content');
+            newActiveContent.style.display = 'block';
+            newActiveContent.style.opacity = 0;
 
-                    
-                    const nonActiveBoxes = document.querySelectorAll('.box:not(.active) h1');
-                    nonActiveBoxes.forEach(box => {
-                        box.style.display = 'none';
-                    });
+            // Move the active box to the new position while maintaining size
+            activeBox.style.transform = `translateX(${deltaX}px)`;
 
-                   
-                    const activeBoxContent = this.querySelector('h1');
-                    activeBoxContent.style.display = 'block';
+            // After the movement is complete, switch the active class and handle content visibility
+            setTimeout(() => {
+                activeBox.classList.remove('active');
+                this.classList.add('active');
 
-                    setTimeout(() => {
-                        activeBox.style.transform = 'translate(0, 0)';
-                    }, 300); 
-                }
-            });
-        });
+                const allContents = document.querySelectorAll('.box .content');
+                allContents.forEach(content => {
+                    content.style.display = 'none';
+                });
+
+                // Fade in the new active content
+                newActiveContent.style.display = 'block';
+                setTimeout(() => {
+                    newActiveContent.style.opacity = 1;
+                }, 10); // Short delay to ensure it starts after display changes
+
+                // Reset transformation to none to align with new state
+                activeBox.style.transform = '';
+
+                // Move the old active box back to its original position
+                setTimeout(() => {
+                    activeBox.style.transform = `translateX(0)`;
+                }, 150); // Delay to ensure the new box animation completes first
+            }, 300); // Ensure this matches the transition time
+        }
+    });
+});
+
+// Initially set the visibility and opacity of content based on the active state
+document.addEventListener('DOMContentLoaded', () => {
+    const activeContent = document.querySelector('.box.active .content');
+    activeContent.style.display = 'block';
+    activeContent.style.opacity = 1;
+});
+
     </script>
 </body>
 </html>
