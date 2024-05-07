@@ -673,3 +673,109 @@ body {
 #success .image-container .logo:hover{
     transform: scale(1.1);
 }
+
+/*cardContent */
+
+
+#cardContent {
+    width: 95%;
+    height: 100%;
+}
+
+#cardContent .cardContentTitle{
+    font-size: 48px;
+    font-weight: 500;
+    padding: 1rem 2rem;
+}
+
+#cardContent .container {
+    display: flex;
+    height: 700px;
+}
+
+#cardContent .box {
+    position: relative;
+    flex: 0 1 15%; /* Default flex-basis for inactive boxes */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid black;
+    transition: flex 0.3s ease-in-out; /* Smooth transitions for flex properties */
+    overflow: hidden;
+    margin-right: -1rem; /* Negative margin to cover the gap */
+    border-radius: 0 20px 20px 0;
+    z-index: 1;
+}
+#cardContent .box:last-child {
+    border-radius: 0 20px 20px 0; /* Rounds last box's right side */
+}
+
+#cardContent .box.active {
+    flex: 0 1 40%;
+    padding-right: 10rem; 
+    z-index: 10;/* Flex-basis for active box */
+}
+
+#cardContent .content {
+    max-height: 0; /* Start with content hidden */
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    font-size: 20px;
+    padding-bottom: 8rem;
+}
+
+#cardContent .box.active .content {
+    max-height: 400px; 
+    padding: 20px; 
+}
+
+#cardContent .title {
+    font-size: 48px;
+    font-weight: 600;
+    padding-bottom: 5rem;
+}
+
+#cardContent #box1 {
+    background-color: white;
+}
+
+#cardContent #box2 {
+    background-image: url('./box2.jpg');
+    background-size: cover; /* Cover the entire area of the box */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#cardContent #box3 {
+    background-color: #E4E4E4;
+}
+
+#cardContent #box4 {
+    background-color: #BFBFBF;
+}
+
+#cardContent #box5 {
+    background-image: url('./card5.jpg');
+    background-size: cover; /* Cover the entire area of the box */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background */
+    color: white;
+}
+
+
+
+#cardContent .date {
+    font-size: 18px;
+}
+
+#cardContent .id {
+    position: absolute;
+    bottom: 50px;
+    right: 10%;
+}
+
+#cardContent .id h1 {
+    font-size: 50px;
+    margin: 0;
+}

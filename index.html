@@ -3,52 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Four Colored Boxes</title>
+    <title>Toggle Active Boxes</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .box:not(.active) .header,
+        .box:not(.active) .content {
+            display: none; /* Hide content and header for non-active boxes */
+        }
+    </style>
 </head>
 <body>
-    
-   <section id="success">
-    <div class="container">
-        <div class="content">
-            <h1>Building Success Together</h1>
-            <p>At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. </p>
-        </div>
-        <div class="image-container">
-            <div class="space-evenly">
-                <div class="logo">
-            <img src="./adobe.png" alt="">
-        </div>
-        <div class="logo">
-            <img src="./meta.png" alt="">
-        </div>
-          
-        </div>
-        <div class="space-between">
-            <div class="logo">
-                <img src="./aws.png" alt="">
-            </div>
-            <div class="logo">
-                <img src="./google.png" alt="">
-            </div>
-            <div class="logo">
-                <img src="./hub.png" alt="">
-            </div>
-        </div>
-        <div class="space-evenly">
-            <div class="logo">
-                <img src="./b.png" alt="">
-            </div>
-            <div class="logo">
-                <img src="./shopify.png" alt="">
-            </div>
-        </div>
-    </div>
-    </div>
-   </section>
+   
 
-    <script >
-    </script>
+    
+<section id="cardContent">   
+
+    <h1 class="cardContentTitle">From Concept to Completion:<br/> Our Proven Process</h1>
+
+    <div class="container">
+        <div id="box1" class="box active">
+            <div class="header">
+                <p class="date">Step 01/05</p>
+                <h1 class="title">Enlighten the Path</h1>
+            </div>
+            <div class="content">
+                <p>At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact.</p>
+            </div>
+            <div class="id">
+               <h1>01</h1> 
+            </div>
+        </div>
+
+        <div id="box2" class="box">
+            <div class="header">
+                <p class="date">Step 02/05</p>
+                <h1 class="title">Forge Connections</h1>
+            </div>
+            <div class="content">
+                <p> At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact. </p>
+            </div>
+            <div class="id">
+               <h1>02</h1> 
+            </div>
+        </div>
+
+        <div id="box3" class="box">
+            <div class="header">
+                <p class="date">Step 03/05</p>
+                <h1 class="title">Achieve Growth</h1>
+            </div>
+            <div class="content">
+                <p> At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact. </p>
+            </div>
+            <div class="id">
+               <h1>03</h1> 
+            </div>
+        </div>
+
+        <div id="box4" class="box">
+            <div class="header">
+                <p class="date">Step 03/05</p>
+                <h1 class="title">Achieve Growth</h1>
+            </div>
+            <div class="content">
+                <p> At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact.</p>
+            </div>
+            <div class="id">
+               <h1>04</h1> 
+            </div>
+        </div>
+
+        <div id="box5" class="box">
+            <div class="header">
+                <p class="date">Step 03/05</p>
+                <h1 class="title">Achieve Growth</h1>
+            </div>
+            <div class="content">
+                <p> At the heart of our business lies a dynamic venture model designed to fuel innovation and drive growth. We thrive on identifying promising opportunities and nurturing them into successful ventures. Through strategic investments, collaborative partnerships, and a relentless pursuit of excellence, we empower entrepreneurs to bring their ideas to life and create lasting impact. </p>
+            </div>
+            <div class="id">
+               <h1>05</h1> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.box').forEach((box, index) => {
+    // Initialize the z-index inversely related to their order to maintain the stacking context
+    box.style.zIndex = 100 - index;
+
+    box.addEventListener('click', function() {
+        // Remove 'active' class from all boxes
+        document.querySelectorAll('.box').forEach(b => b.classList.remove('active'));
+        
+        // Add 'active' class to the clicked box
+        this.classList.add('active');
+    });
+});
+
+</script>
 
 </body>
 </html>
