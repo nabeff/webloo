@@ -56,5 +56,52 @@ window.addEventListener('click', function (event) {
 });
 
 
-// Path: index.html
+// Path: story.html
 
+document.querySelectorAll('.box').forEach(box => {
+    box.addEventListener('click', function() {
+        const activeBox = document.querySelector('.active');
+        if (this !== activeBox) {
+        
+            const clickedBoxRect = this.getBoundingClientRect();
+            const activeBoxRect = activeBox.getBoundingClientRect();
+            let deltaX;
+
+            if (clickedBoxRect.left > activeBoxRect.left) {
+               
+                deltaX = clickedBoxRect.left - activeBoxRect.left - (activeBoxRect.width - clickedBoxRect.width);
+            } else {
+            
+                deltaX = clickedBoxRect.left - activeBoxRect.left;
+            }
+
+            activeBox.style.transform = `translateX(${deltaX}px)`;
+
+            setTimeout(() => {
+              
+                activeBox.classList.remove('active');
+                this.classList.add('active');
+
+                const allContents = document.querySelectorAll('.box .content');
+                allContents.forEach(content => {
+                    content.style.opacity = 0;
+                });
+
+      
+                setTimeout(() => {
+                    const newActiveContent = this.querySelector('.content');
+                    newActiveContent.style.opacity = 1;
+
+                  
+                    activeBox.style.transform = '';
+                }, 150);  
+            }, 100);  
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure the initial active box content is visible
+    const activeContent = document.querySelector('.box.active .content');
+    activeContent.style.opacity = 1;
+});
