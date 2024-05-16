@@ -1,106 +1,477 @@
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-#cardContent {
-    width: 95%;
+    font-family: 'Manrope';
+    margin: 0;
     height: 100%;
+    
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box; /* This ensures padding and borders are included in the width and height */
 }
 
-#cardContent .cardContentTitle{
-    font-size: 48px;
-    font-weight: 500;
-    padding: 1rem 2rem;
+li {
+    list-style-type: none;
+    text-decoration: none;
 }
 
-#cardContent .container {
-    display: flex;
-    height: 700px;
+#footer {
+    margin-top: auto;
+    background: #000;
+    color: #fff;
+    padding: 40px 55px;
+
+    height: 7;
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;
 }
 
-#cardContent .box {
-    position: relative;
-    flex: 0 1 15%; /* Default flex-basis for inactive boxes */
+
+
+#footer .container {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    
+    
+    
+} 
+
+#footer .part1 { 
+   cursor: pointer;
+   justify-content: start;
+}
+
+#footer .part2 { 
+    margin-top: 2rem;
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+}
+
+  
+#footer .content1 {
+    display: flex;
+  flex-direction: column;
+  width: 30%;
+ 
+}
+#footer .footercontent1 {
+    display: flex;
+  gap:1rem;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+#footer .footercontent1:hover img {
+    transform: rotate(45deg);
+
+}
+#footer .footercontent1 img {
+    height: 30px;
+    width: 30px;
+    transition: 0.3s;
+}
+
+
+
+#footer .content1 h1{
+    font-size: 62px;
+    font-weight: 500;
+    margin: 0;
+    cursor: pointer;
+}
+  
+#footer .content2 {
+    display: flex;
+    gap: 2rem;
+    width: 70%;
+    justify-content: space-evenly;
+}
+
+
+  
+#footer .content2 li{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #FFFFFF;
+    transition: 0.5s;
+   
+}
+
+#footer .content2 li:hover{
+    color: #bbbbbb;
+   
+}
+
+  
+#footer .content2 h3{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+   
+}
+
+#footer .content2 h3:hover{
+   transform: scale(1.05);
+   
+}
+
+#footer .part3 { 
+    margin-top: 4rem;
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+}
+
+#footer .part3 p{ 
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    #footer .content2 {
+        display: none;
+    }
+
+    #footer .container {
+        display: flex;
+        justify-content: center;
+    } 
+    
+
+    #footer .part1 {
+        display: flex;
+        justify-content: center;
+    } 
+
+    #footer .part2 {
+        display: flex;
+        justify-content: center;
+    } 
+    #footer .content1 {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+
+    #footer .content1 h1{
+        font-size: 40px;
+        font-weight: 600;
+       margin-bottom: 2rem;
+    }
+    
+    #footer .footercontent1 {
+        justify-content: center;
+    
+    }
+
+    #footer .part3 {
+        justify-content: center;
+    } 
+   
+}
+  
+    
+
+#homepc {
     padding: 2rem;
-    border: 1px solid black;
-    transition: flex 0.3s ease-in-out; /* Smooth transitions for flex properties */
-    overflow: hidden;
-    margin-right: -1rem; /* Negative margin to cover the gap */
-    border-radius: 0 20px 20px 0;
+}
+#homepc .container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+}
+
+#homepc .homepc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 0 0rem 0.4rem 0;
+    margin: 2rem;
+    border-bottom: 2px solid #000000;
+    width: 50%; 
+}
+
+#homepc .title{
+    font-size: 62px;
+    font-weight: 500;
+    line-height: 65px;
+}
+
+#homepc .rating-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+}
+
+#homepc .boxnumber{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#homepc .boxnumber h2{
+    font-weight: 500;
+    font-size: 48px;
+    margin: 0;
+}
+
+#homepc .boxnumber p{
+    font-size: 12.72px;
+}
+
+
+#homepc .container-img {
+    width: 50%; 
+}
+
+#homepc .container-img img {
+    width: 100%;
+    max-height: 836px; 
+}
+
+
+#services.container-services {
+    position: relative;
+    height: 90vh;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#services .backcircle-position {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#services .backcircle {
+    position: absolute;
+    border: 1px solid #ECECEC;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: -1;
+    width: 50%;
+    height: 90%;
+}
+
+#services .service-title {
+    font-size: 44px;
+    font-weight: 400;
+   
+}
+
+#services .backcircle2 {
+    position: absolute;
+    border: 1px solid #ECECEC;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: -1;
+    width: 40%;
+    height: 80%;
+}
+
+#services .backcircle3 {
+    position: absolute;
+    border: 1px solid #ECECEC;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: -1;
+    width: 30%;
+    height: 70%;
+}
+
+#services .services {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    max-width: 483px;
+    padding: 1rem;
+    background-color: #F1F1F1;
+    border-radius: 20px;
+    transition: all 0.8s ease; /* Smooth shadow transition */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+#services #card1 {
+    top: 0;
+    left: 0;
+}
+
+#services #card2 {
+    top: 0;
+    right: 0;
+}
+
+#services #card3 {
+    bottom: 0;
+    left: 0;
+}
+
+#services #card4 {
+    bottom: 0;
+    right: 0;
+}
+
+#services.container-services.centered #card1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
 }
-#cardContent .box:last-child {
-    border-radius: 0 20px 20px 0; /* Rounds last box's right side */
+
+#services.container-services.centered #card2 {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 2;
 }
 
-#cardContent .box.active {
-    flex: 0 1 40%;
-    padding-right: 10rem; 
-    z-index: 10;/* Flex-basis for active box */
+#services.container-services.centered #card3 {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 3;
 }
 
-#cardContent .content {
-    max-height: 0; /* Start with content hidden */
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    font-size: 20px;
-    padding-bottom: 8rem;
+#services.container-services.centered #card4 {
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    z-index: 4;
 }
 
-#cardContent .box.active .content {
-    max-height: 400px; 
-    padding: 20px; 
+#services.container-services:not(.centered) .services:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover for depth */
 }
 
-#cardContent .title {
-    font-size: 48px;
-    font-weight: 600;
-    padding-bottom: 5rem;
+#services.container-services:not(.centered) .services:hover .categories {
+    max-height: 500px; /* Adjust based on estimated max content height */
+    opacity: 1; /* Full visibility */
+    visibility: visible; /* Make interactable */
+    transition: max-height 1s ease, opacity 0.5s, visibility 0.1s; /* Start opacity after max-height begins */
 }
 
-#cardContent #box1 {
+#services.container-services.centered .services {
+    pointer-events: none; /* Disable interactions when centered */
+}
+
+#services .title {
+    margin-bottom: 2rem;
+}
+
+#services .service-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#services .service-id {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#services .container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-right: 2rem;
+}
+
+#services .circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#services .one {
+    z-index: 1;
+}
+
+#services .two {
+    z-index: 2;
+    left: 30px;
+    background-color: white;
+    text-align: center;
+}
+
+#services .circle img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#services .numbers {
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
     background-color: white;
 }
 
-#cardContent #box2 {
-    background-image: url('./box2.jpg');
-    background-size: cover; /* Cover the entire area of the box */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat;
-    color: white;
+#services .categories {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem; /* Allow items to wrap to the next line */
+    overflow: hidden; /* Hide all overflow content */
+    max-height: 0; /* Start fully collapsed */
+    opacity: 0; /* Start fully transparent */
+    visibility: hidden; /* Not interactable */
+    transition: max-height 0.5s ease, opacity 2s ease, visibility 2s; /* Transition effects, adjust max-height duration for smoother effect */
 }
 
-#cardContent #box3 {
-    background-color: #E4E4E4;
+#services .category {
+    font-size: 16px;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    border-radius: 2rem;
+    transition: background-color 0.3s; /* Background transition for interaction */
 }
 
-#cardContent #box4 {
-    background-color: #BFBFBF;
+#services .category:hover {
+    background-color: #ccc; /* Change background on hover */
 }
 
-#cardContent #box5 {
-    background-image: url('./card5.jpg');
-    background-size: cover; /* Cover the entire area of the box */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background */
-    color: white;
-}
-
-
-
-#cardContent .date {
-    font-size: 18px;
-}
-
-#cardContent .id {
+#services .arrow-bottom-right {
     position: absolute;
-    bottom: 50px;
-    right: 10%;
+    bottom: 10px; /* 10px from the bottom of the container */
+    right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Makes the arrow clickable, assuming it's a button/link */
 }
 
-#cardContent .id h1 {
-    font-size: 50px;
-    margin: 0;
+#services .arrow-bottom-right img {
+    display: block; /* Ensures the image is treated as a block element */
+    width: 45px; /* Specifies the width of the image */
+    height: auto; /* Maintains the aspect ratio of the image */
+    transition: transform 0.3s ease; /* Smooth transition for the transform property */
+}
+
+#services.container-services:not(.centered) .services:hover .arrow-bottom-right img {
+    transform: rotate(-42deg); /* Rotates the image 42 degrees on hover */
 }
