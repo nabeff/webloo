@@ -1,0 +1,38 @@
+{
+  "Discovery": {
+    "TIMING": "1 week",
+    "TEAM": "Account Executive",
+    "DELIVERABLE": "Confirmed fit for technical and budget requirements with a high-level written proposal and PM match",
+    "paragraph": "This initial step is meant to help decide if we’re a good fit for your project. This includes assessing tech feasibility, your team’s goals, budget, and timeline, and aligning expectations so that we can together decide whether to proceed.  <br/><br/> You begin by booking a call with an Airdev account executive to discuss your project and our approach. They will understand your team, what you are trying to do, and the most critical product requirements to get there. From this call they will write out a summary for our product team, which will review and confirm technical feasibility and budget/timeline alignment. <br/><br/> The result of this step is a high-level written proposal for the build: the features we would build, expected budget, and stages/timeline to get to launch. While the exact details will be confirmed during the formal scoping process, our aim at this step is to give you the information you need to have confidence that this is the right path for you. When you’re ready, you’ll put down a refundable deposit to reserve time with your PM for scoping."
+  },
+  "Scoping": {
+    "TIMING": "2-3 weeks",
+    "TEAM": "Product Manager",
+    "DELIVERABLE": "Detailed requirements with users, pages, and features Refined budget, timeline, and milestones",
+    "paragraph": "The goal of the scoping step is to align on the exact features and architecture for your app. Taking the time to define everything upfront helps us to move quickly during the build, and ensures that you get what you are expecting.<br/><br/> We start by matching you with a Product Manager (PM) from our team who we believe will best serve your needs. During your calls with the PM, you’ll walk  through the entire app flow, stopping at critical points to decide what to include vs. push for later, and the best ways to solve for the requirements within budget. We typically anchor on the leanest approach, and let you push to add features as needed. Our team will perform technical research and document all requirements."
+  },
+  "Design": {
+    "TIMING": "1-2 weeks",
+    "TEAM": "Design Team",
+    "DELIVERABLE": "High-fidelity Figma mockups Completed scope doc Staffed build team & start date",
+    "paragraph": "With feature requirements in place, the final step to the pre-build process is to add high fidelity mockups that define what users will see as they interact with your product. This is where the UX designer comes in. <br/><br/>  Using the written feature descriptions from the scoping doc, the UX designer creates a full set of custom Figma mockups for your app, using our Canvas design framework with your company's branding. This means you’ll get designs that are (1) custom to your features, (2) follow best practices and standard UX conventions, and (3) fit our build process so they can be assembled efficiently. <br/><br/> Once all pictures and words are combined, you have the entire scope doc that will serve as the blueprint for your build. You can submit any detailed feedback within this doc, and your PM can make adjustments as needed (including corresponding budget/timeline updates) until you are comfortable with the plan."
+  },
+  "Development": {
+    "TIMING": "1 week to several months (depending on complexity)",
+    "TEAM": "Development Team",
+    "DELIVERABLE": "Fully functional app",
+    "paragraph": "With the detailed build plan in hand, the focus shifts to your Airdev build team, which builds and tests the complete application in weekly milestones.<br/><br/> Your PM will manage a team consisting of a lead developer, UI assembler, and QA specialist. Each week, the team builds and tests the features we have designated for that milestone, and delivers the working app along with testing instructions so you can confirm everything is working as expected. Your PM will hold a live delivery call with you to make sure we’re aligned and ready to proceed with the following milestone. <br/><br/> This stage ends when a full version of your app — with all features internally tested by Airdev — is ready for your final review before launch!"
+  },
+  "Review": {
+    "TIMING": "30 days",
+    "TEAM": "QA Specialist",
+    "DELIVERABLE": "Live app on your domain Full IP transfer to client",
+    "paragraph": "Even the most basic software products have complexity under the hood, and can take some time to fully test and confirm. For every build, we provide a 30-day window of coverage from our team to confirm, launch, and support the application. <br/><br/> When we turn the app over to you, our internal team has finished our QA process, so the first step is for you to thoroughly review every aspect of the tool and flag anything that is not built according to the confirmed scope. We have a nifty widget so you can mark up the app itself to create tickets, which we clarify and resolve. <br/><br/> When you're ready to go live, we deploy your app on your custom domain and transfer all credentials and IP rights you. Celebrations and AirHugs for everyone! Any remaining time in the 30-day window is extra support just in case you spot anything that slipped through the cracks."
+  },
+  "Support": {
+    "TIMING": "Ad hoc or monthly",
+    "TEAM": "Varies depending on requirements",
+    "DELIVERABLE": "Iterative launches",
+    "paragraph": "As you approach the end of your “review and launch” period, your Client Success manager will contact you to chat about what comes next. For most clients, launch is just the beginning since app generally must evolve in response to user feedback.<br/><br/>  We offer two forms of post-launch support: (1) one-time capacity to build discrete features, and (2) ongoing monthly capacity to maintain and build features over time from the roadmap. The former is typically best for early-stage clients on a budget, and the latter is best for more mature clients with a robust roadmap and need for constant support.<br/><br/>  Overall, we recognize that your journey and needs can be unpredictable. Our goal is to give you control of when and how you use your Airdev team to get there. "
+  }
+}

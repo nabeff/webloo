@@ -229,3 +229,41 @@ circleHeader.addEventListener('click', openHeaderContainer);
 menuButton.addEventListener('click', openHeaderContainer);
 closeImage.addEventListener('click', closeHeaderContainer);
 overlay.addEventListener('click', closeHeaderContainer);
+
+
+// Path: process.html
+
+let processData = {};
+
+fetch('process.json')
+    .then(response => response.json())
+    .then(data => {
+        processData = data;
+        updateContent('Discovery');
+    })
+    .catch(error => console.error('Error fetching process data:', error));
+
+function updateContent(section) {
+    if (processData[section]) {
+        const data = processData[section];
+        const fadeElements = document.querySelectorAll('.fade');
+
+        // Apply fade-out effect
+        fadeElements.forEach(el => el.classList.remove('visible'));
+        setTimeout(() => {
+            document.getElementById('timing').textContent = data.TIMING;
+            document.getElementById('team').textContent = data.TEAM;
+            document.getElementById('deliverable').textContent = data.DELIVERABLE;
+            document.getElementById('paragraph').innerHTML = data.paragraph;
+
+            // Apply fade-in effect
+            fadeElements.forEach(el => el.classList.add('visible'));
+        }, 300);
+
+        const navbarItems = document.querySelectorAll('.navbar li');
+        navbarItems.forEach(item => item.classList.remove('active'));
+        document.querySelector(`.navbar li[onclick="updateContent('${section}')"]`).classList.add('active');
+    } else {
+        console.error('Section data not found:', section);
+    }
+}
